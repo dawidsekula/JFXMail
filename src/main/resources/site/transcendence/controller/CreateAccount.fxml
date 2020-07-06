@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="320.0" maxWidth="720.0" minHeight="320.0" minWidth="720.0" prefHeight="320.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="643.0" layoutY="267.0" mnemonicParsing="false" onAction="#createAccountAction" text="Create" />
+      <Separator layoutX="184.0" layoutY="14.0" orientation="VERTICAL" prefHeight="292.0" prefWidth="0.0" />
+      <Label layoutX="345.0" layoutY="20.0" text="Create account">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="74.0" text="Email address" />
+      <Label layoutX="200.0" layoutY="101.0" text="Password" />
+      <Label layoutX="200.0" layoutY="145.0" prefHeight="17.0" prefWidth="50.0" text="SMTP " />
+      <Separator layoutX="200.0" layoutY="57.0" prefWidth="200.0" />
+      <Separator layoutX="200.0" layoutY="131.0" prefWidth="200.0" />
+      <Label layoutX="200.0" layoutY="170.0" prefHeight="17.0" prefWidth="50.0" text="IMAP" />
+      <PasswordField fx:id="emailPasswordField" layoutX="300.0" layoutY="97.0" prefHeight="25.0" prefWidth="394.0" />
+      <TextField fx:id="emailAddressField" layoutX="300.0" layoutY="70.0" prefHeight="25.0" prefWidth="394.0" />
+      <TextField fx:id="smtpField" layoutX="300.0" layoutY="141.0" prefHeight="25.0" prefWidth="394.0" />
+      <TextField fx:id="imapField" layoutX="300.0" layoutY="166.0" prefHeight="25.0" prefWidth="394.0" />
+      <Label layoutX="200.0" layoutY="205.0" text="Download emails from last" />
+      <TextField fx:id="lastDaysLabel" layoutX="345.0" layoutY="201.0" prefHeight="25.0" prefWidth="50.0" />
+      <Label layoutX="400.0" layoutY="205.0" text="days (type 0 to download all messages)" />
+      <Button layoutX="201.0" layoutY="267.0" mnemonicParsing="false" onAction="#testConnectionAction" text="Test connection" />
+      <Label layoutX="313.0" layoutY="271.0" text="Connection status" />
+      <Label layoutX="201.0" layoutY="235.0" text="Use default settings for" />
+      <ChoiceBox fx:id="defaultServersPicker" layoutX="334.0" layoutY="231.0" prefHeight="25.0" prefWidth="123.0" />
+   </children>
+</AnchorPane>
