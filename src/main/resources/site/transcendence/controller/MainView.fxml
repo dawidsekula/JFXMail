@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <WebView fx:id="emailWebView" layoutX="255.0" layoutY="288.0" prefHeight="298.0" prefWidth="622.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="288.0" />
+      <TreeView fx:id="foldersTreeView" layoutX="14.0" layoutY="77.0" prefHeight="509.0" prefWidth="236.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="77.0" />
+      <TableView fx:id="emailsTableView" layoutX="255.0" layoutY="77.0" prefHeight="196.0" prefWidth="622.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="77.0">
+         <columns>
+            <TableColumn fx:id="colSubject" prefWidth="244.0" text="Subject" />
+            <TableColumn fx:id="colFrom" minWidth="0.0" prefWidth="229.0" text="From" />
+            <TableColumn fx:id="colSize" minWidth="0.0" prefWidth="87.0" text="Size" />
+            <TableColumn fx:id="colUnread" minWidth="0.0" prefWidth="61.0" text="Unread" />
+            <TableColumn fx:id="colDate" prefWidth="75.0" text="Date" />
+         </columns></TableView>
+      <Button layoutX="14.0" layoutY="46.0" mnemonicParsing="false" onAction="#createEmailAction" text="Create an email" />
+      <Button fx:id="downloadAttachmentsButton" layoutX="409.0" layoutY="46.0" mnemonicParsing="false" onAction="#downloadAttachments" text="Download attachments" />
+      <Button layoutX="264.0" layoutY="46.0" mnemonicParsing="false" onAction="#changeEmailStatus" text="Read/Unread message" />
+      <Label fx:id="downloadAttachmentsLabel" layoutX="559.0" layoutY="50.0" text="Downloading attachments..." />
+      <ProgressBar fx:id="downloadAttachmentsProgress" layoutX="713.0" layoutY="50.0" prefHeight="18.0" prefWidth="173.0" progress="0.0" />
+   </children>
+</AnchorPane>
