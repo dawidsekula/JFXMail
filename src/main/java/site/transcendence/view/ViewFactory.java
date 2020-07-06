@@ -18,6 +18,8 @@ public class ViewFactory {
     private final String mainViewPath = "site/transcendence/controller/MainView.fxml";
     private final String emailDetailsPath = "site/transcendence/controller/EmailDetails.fxml";
     private final String composeMessagePath = "site/transcendence/controller/ComposeMessage.fxml";
+    private final String createAccountPath = "site/transcendence/controller/CreateAccount.fxml";
+
     private final String iconsPath = "/images/icons/";
 
     private final ModelAccess modelAccess;
@@ -25,6 +27,7 @@ public class ViewFactory {
     private MainView mainView;
     private EmailDetailsView emailDetailsView;
     private ComposeMessageView composeMessageView;
+    private CreateAccountView createAccountView;
 
     private ViewFactory() {
         this.modelAccess = new ModelAccess();
@@ -56,6 +59,11 @@ public class ViewFactory {
     public Scene getComposeMessageScene(){
         composeMessageView = new ComposeMessageView(modelAccess);
         return initializeScene(composeMessagePath, composeMessageView);
+    }
+
+    public Scene getCreateAccountScene(){
+        createAccountView = new CreateAccountView(modelAccess);
+        return initializeScene(createAccountPath, createAccountView);
     }
 
     public ImageView getIcon(String iconFileName) {
@@ -99,7 +107,6 @@ public class ViewFactory {
 
             scene = new Scene(parent);
             scene.getStylesheets().add(getDefaultCss());
-
         } catch (Exception e) {
             throw new RuntimeException("Scene not loaded: " + e.getLocalizedMessage());
         }

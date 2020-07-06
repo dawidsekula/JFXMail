@@ -19,7 +19,11 @@ public class ModelAccess{
     private List<Folder> serverFoldersList;
     private Map<String, EmailAccount> emailAccounts;
     private ObservableList<String> emailAccountsAddresses;
+    private EmailFolder emailFolderRoot;
 
+    /**
+     *  Common access to selected message
+     */
     public EmailMessage getSelectedMessage() {
         return selectedMessage;
     }
@@ -27,6 +31,9 @@ public class ModelAccess{
         this.selectedMessage = selectedMessage;
     }
 
+    /**
+     *  Common access to selected folder
+     */
     public EmailFolder getSelectedFolder() {
         return selectedFolder;
     }
@@ -34,6 +41,9 @@ public class ModelAccess{
         this.selectedFolder = selectedFolder;
     }
 
+    /**
+     *  Common access to folders on the server side
+     */
     public List<Folder> getServerFoldersList() {
         if (serverFoldersList == null) serverFoldersList = new ArrayList<>();
         return serverFoldersList;
@@ -45,24 +55,35 @@ public class ModelAccess{
         getServerFoldersList().add(serverFolder);
     }
 
+    /**
+     *  Common access to created email accounts
+     */
     private Map<String, EmailAccount> getEmailAccounts() {
         if (emailAccounts == null) emailAccounts = new HashMap<>();
         return emailAccounts;
     }
-
     public ObservableList<String> getEmailAccountsAddresses() {
         if (emailAccountsAddresses == null) emailAccountsAddresses = FXCollections.observableArrayList();
         return emailAccountsAddresses;
     }
-
     public EmailAccount getEmailAccount(String emailAddress){
         return getEmailAccounts().get(emailAddress);
     }
-
     public void addEmailAccount(EmailAccount emailAccount){
         getEmailAccounts().put(emailAccount.getEmailAddress(), emailAccount);
         getEmailAccountsAddresses().add(emailAccount.getEmailAddress());
     }
+
+    /**
+     *  Common access to main email root with all created accounts displayed
+     */
+    public EmailFolder getEmailFolderRoot(){
+        return emailFolderRoot;
+    }
+    public void setEmailFolderRoot(EmailFolder emailFolderRoot) {
+        this.emailFolderRoot = emailFolderRoot;
+    }
+
 
 
 

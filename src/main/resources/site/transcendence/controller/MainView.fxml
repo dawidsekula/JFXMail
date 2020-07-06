@@ -26,5 +26,6 @@
       <Button layoutX="264.0" layoutY="46.0" mnemonicParsing="false" onAction="#changeEmailStatus" text="Read/Unread message" />
       <Label fx:id="downloadAttachmentsLabel" layoutX="559.0" layoutY="50.0" text="Downloading attachments..." />
       <ProgressBar fx:id="downloadAttachmentsProgress" layoutX="713.0" layoutY="50.0" prefHeight="18.0" prefWidth="173.0" progress="0.0" />
+      <Button layoutX="121.0" layoutY="46.0" mnemonicParsing="false" onAction="#addNewAccount" text="Add new account" />
    </children>
 </AnchorPane>

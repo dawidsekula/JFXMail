@@ -83,18 +83,10 @@ public class MainView extends Controller implements Initializable {
          * Initializing structure of the tree
          */
         EmailFolder emailFolderRoot = new EmailFolder("", null);
+        getModelAccess().setEmailFolderRoot(emailFolderRoot);
 
         foldersTreeView.setRoot(emailFolderRoot);
         foldersTreeView.setShowRoot(false);
-
-        CreateEmailAccountService accountService = new CreateEmailAccountService(
-                System.getenv("sampleEmailAddress"),
-                System.getenv("sampleEmailPassword"),
-                emailFolderRoot,
-                getModelAccess()
-        );
-
-        accountService.start();
 
         /**
          * Initializing behaviour of the tree
@@ -284,10 +276,25 @@ public class MainView extends Controller implements Initializable {
         }
     }
 
+    // FIXME clicking on the button causes exception if no accounts are created NOTE temporary added if statement
+    // Exception in thread "JavaFX Application Thread" java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+    // Caused by: java.lang.reflect.InvocationTargetException
     @FXML
     void createEmailAction(ActionEvent event) {
+        if (getModelAccess().getEmailAccountsAddresses().size() > 0) {
+            Stage stage = new Stage();
+            Scene scene = ViewFactory.getInstance().getComposeMessageScene();
+
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
+
+    @FXML
+    void addNewAccount(ActionEvent event) {
         Stage stage = new Stage();
-        Scene scene = ViewFactory.getInstance().getComposeMessageScene();
+        Scene scene = ViewFactory.getInstance().getCreateAccountScene();
 
         stage.setScene(scene);
         stage.show();
