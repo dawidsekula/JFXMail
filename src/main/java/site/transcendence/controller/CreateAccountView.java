@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import site.transcendence.controller.service.CreateEmailAccountService;
 
 import java.net.URL;
@@ -23,6 +24,9 @@ public class CreateAccountView extends Controller implements Initializable {
     @FXML
     private TextField imapField;
 
+
+    @FXML
+    private ToggleButton downloadMessagesEnabled;
     @FXML
     private TextField lastDaysLabel;
 
@@ -68,6 +72,8 @@ public class CreateAccountView extends Controller implements Initializable {
     void testConnectionAction(ActionEvent event) {
 
     }
+
+
 
 
 }

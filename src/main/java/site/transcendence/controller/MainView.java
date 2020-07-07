@@ -6,12 +6,14 @@ import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.web.WebView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import site.transcendence.controller.service.AttachmentService;
 import site.transcendence.controller.service.CreateEmailAccountService;
@@ -297,6 +299,17 @@ public class MainView extends Controller implements Initializable {
         Scene scene = ViewFactory.getInstance().getCreateAccountScene();
 
         stage.setScene(scene);
+
+        stage.setHeight(380);
+        stage.setWidth(740);
+        stage.setResizable(false);
+        stage.setTitle("Create account");
+        //stage.initStyle(StageStyle.UNDECORATED); //TODO after implementing 'Cancel' button
+        //stage.initOwner();
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+
+
         stage.show();
     }
 

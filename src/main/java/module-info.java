@@ -10,5 +10,8 @@ open module site.transcendence {
     requires java.mail;
     requires activation;
 
+    requires org.controlsfx.controls;
+
+
     exports site.transcendence;
 }

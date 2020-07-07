@@ -57,7 +57,12 @@
             <artifactId>javax.mail</artifactId>
             <version>${javax.mail.version}</version>
         </dependency>
-
+        <!-- High quality UI for JavaFX -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.0.2</version>
+        </dependency>
 
     </dependencies>
 

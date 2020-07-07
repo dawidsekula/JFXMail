@@ -8,3 +8,9 @@ AnchorPane{
     -fx-border-radius: 0 0 0 0;
     -fx-background-radius: 0 0 0 0;
 }
+
+ToggleButton {
+    -thumb-move-animation-time: 100;
+    -toggle-display: left;
+
+}

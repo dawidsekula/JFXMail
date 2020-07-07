@@ -14,8 +14,7 @@ public class JFXMail extends Application {
 
     @Override
     public void start(Stage stage) throws OperationNotSupportedException {
-        ViewFactory viewFactory = ViewFactory.getInstance();
-        Scene scene = viewFactory.getMainScene();
+        Scene scene = ViewFactory.getInstance().getMainScene();
 
         stage.setScene(scene);
         stage.show();
