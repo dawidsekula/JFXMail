@@ -39,6 +39,9 @@ on the device so you have to configure your email account and download messages 
         * There can be only one window of this type opened
         * Window is dependent on the main view which is unavailable until this one is opened
         * Default data is set for simplier and faster use during implementation proccess
+        
+        > Default data is passed through environment variables such as `sampleEmailAddress` for account's login/mail and `sampleEmailPassword` for it's password. If you will not provide them, labels will not contain any default data. 
+       
         * Successful account creation causes `Email account constructed successfully` displayed in console, creating folders and downloading all it's messages 
             * `Icon not found: null` message in console is irrelevant and caused of icon creating implementation
             * After at least one created account you are able to `Create an email`
